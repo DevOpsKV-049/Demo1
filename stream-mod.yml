@@ -1,0 +1,11 @@
+provider:
+  name: faas
+  gateway: http://127.0.0.1:8080
+functions:
+  stream-mod:
+    lang: python3
+    handler: ./stream-mod
+    image: yuriy6735/stream-mod
+    labels:
+      com.openfaas.scale.min: "1"
+
