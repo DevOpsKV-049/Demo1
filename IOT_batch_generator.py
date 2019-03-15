@@ -9,7 +9,7 @@ import os
 list_of_city = ['Kyiv', 'Lviv', 'Odessa']
 
 
-def iot_batch_data():  # generating and sending batch data to modification function in OpenFaaS
+def iot_batch_data():  # generating and sending batch data to modification OpenFaaS function
     while True:
         batch_data = []
         count_of_timeuot = 0
@@ -23,7 +23,7 @@ def iot_batch_data():  # generating and sending batch data to modification funct
 
             batch_data.append(data)
             time.sleep(1)
-        # sending batch data to modification function in OpenFaaS
+        # sending batch data to modification OpenFaaS function
         r = requests.post(os.environ['FAAS'] + '/async-function/batch-mod', json.dumps(batch_data))
 
         print(r.status_code, "Data sent!")
