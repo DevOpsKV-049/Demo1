@@ -28,13 +28,22 @@ spec:
         - containerPort: 27017
         env:
           - name: MONGODB_USERNAME
-            value: main_admin
+            valueFrom:
+              secretKeyRef:
+                name: db-user-pass
+                key: username.txt
           - name: MONGODB_PASSWORD
-            value: abc123
+            valueFrom:
+              secretKeyRef:
+                name: db-user-pass
+                key: password.txt
           - name: MONGODB_DATABASE
             value: mysinoptik
           - name: MONGODB_ROOT_PASSWORD
-            value: abc123
+            valueFrom:
+              secretKeyRef:
+                name: db-user-pass
+                key: password.txt
         volumeMounts:
           - name: mongodb-persistent-storage
             mountPath: "/bitnami/mongodb"

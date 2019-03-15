@@ -6,7 +6,14 @@ def handle(req):
     Args:
         req (str): request body
     """
-    client = MongoClient('mongodb://main_admin:abc123@mongodb-service.default.svc/mysinoptik', 27017)
+    secret = ''
+    with open ('/var/openfaas/secrets/secret-api-key') as fin:
+        for line in fin:
+            secret = line
+            break
+
+
+    client = MongoClient('mongodb://main_admin:{0}@mongodb-service.default.svc/mysinoptik'.format(secret), 27017)
 
     db = client.mysinoptik
     collection_weth = db.weather

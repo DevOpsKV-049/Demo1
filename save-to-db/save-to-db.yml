@@ -4,5 +4,7 @@ provider:
 functions:
   saveall:
     lang: python3
-    handler: ./save-to-db
+    handler: ./saveall
     image: zambezi/ssdevops
+    secrets:
+      - secret-api-key
