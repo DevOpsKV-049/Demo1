@@ -1,10 +1,10 @@
 provider:
   name: openfaas
-  gateway: http://192.168.99.100:31112
+  gateway: http://127.0.0.1:8080
 functions:
-  saveall:
+  save-to-db:
     lang: python3
-    handler: ./saveall
+    handler: ./save-to-db
     image: zambezi/ssdevops
     secrets:
       - secret-api-key
