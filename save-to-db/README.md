@@ -60,10 +60,15 @@ spec:
             
  ###
  Run jupetr
+ 
  kubectl apply -f jupetr.yaml --namespace jupyter
+ 
  After it runs, we need to get logs of a container in order to get the token that will allow us to reach the UI.
+ 
  kubectl logs -n jupyter "PODS NAME"
+ 
  Let's now test our setup. We will forward port from container to localhost and try to login using the token.
+ 
  kubectl port-forward "PODS NAME" 8888:8888 -n jupyter
 
 
