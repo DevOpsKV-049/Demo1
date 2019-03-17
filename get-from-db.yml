@@ -1,0 +1,10 @@
+provider:
+  name: faas
+  gateway: http://127.0.0.1:8080
+functions:
+  get-from-db:
+    lang: python3
+    handler: ./get-from-db
+    image: swatolegntu/get-from-db
+    secrets:
+      - secret-api-key
