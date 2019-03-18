@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jupyter-ui
+  labels:
+    app: jupyter-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jupyter-ui
+  template:
+    metadata:
+      labels:
+        app: jupyter-ui
+    spec:
+      containers:
+      - name: jupyter-ui
+        image: jupyter-ui
+        ports:
+        - containerPort: 8888
