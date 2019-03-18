@@ -1,8 +1,6 @@
 Function that generate random stream data as IoT devices and send to modification OpenFaaS function.
 
-
-
-![Example architecture](https://github.com/DevOpsKV-049/Demo1/1.png)
+![Example architecture](https://github.com/DevOpsKV-049/Demo1/blob/stream%2Bmod/1.png)
 
 Getting started:
 
