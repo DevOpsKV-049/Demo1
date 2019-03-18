@@ -1,7 +1,9 @@
 Function that generate random stream data as IoT devices and send to modification OpenFaaS function.
 
-        Demo1/5cf19822-b498-43e8-a26b-b86c3ac7ce9d.jpeg
-      
+
+
+![Example architecture](https://github.com/DevOpsKV-049/Demo1/1.png)
+
 Getting started:
 
 You should have installed Python3(with installed module requests), Docker, Kubernetes.
